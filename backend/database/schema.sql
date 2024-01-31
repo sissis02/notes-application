@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS note;
---example
+-- example
 create table item (
   id int unsigned primary key auto_increment not null,
   title varchar(255) not null
@@ -11,7 +11,8 @@ CREATE TABLE user (
   id INT PRIMARY KEY AUTO_INCREMENT,
   firstname VARCHAR(100) NOT NULL,
   lastname VARCHAR(100) NOT NULL,
-  password VARCHAR(500) NOT NULL
+  email VARCHAR(100) NOT NULL,
+  hashed_password VARCHAR(500) NOT NULL
 );
 
 CREATE TABLE note (
