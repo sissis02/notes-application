@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Tajawal:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 200ms;
+  --title-font: "Arvo", serif;
+  font-family: "Tajawal", sans-serif;
+}
+
+body,
+html,
+:root {
+  width: 100vw;
+  height: 100vh; // min-height : 100vh if ok for scroll
+  overflow-x: hidden; // to avoid scrolling across the width
+}
+
+:root {
+  --primary-100: #161616;
+  --primary-200: #2c2c2c;
+  --primary-300: #333333;
+  --accent-100: #5c5c5c;
+  --accent-200: #666666;
+  --bg-100: #b9b9b9;
+  --bg-200: #e0e0e0;
+  --bg-300: #f7f7f7;
+  --white-color: #ffffff;
+}
