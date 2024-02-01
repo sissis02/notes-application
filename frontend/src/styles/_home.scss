@@ -14,3 +14,53 @@
     height: 50vh;
   }
 }
+
+// responsive
+
+@media screen and (max-width: 1200px) {
+  .home {
+    .note {
+      width: 30%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home {
+    .note {
+      width: 35%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    .note {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home {
+    .note {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    .note {
+      width: 65%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home {
+    .note {
+      width: 80%;
+    }
+  }
+}

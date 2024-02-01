@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import axios from "axios";
-import { useNavigate, useRevalidator } from "react-router-dom";
+import { useNavigate, useRevalidator, Link } from "react-router-dom";
 
 function Register() {
   const firstnameRef = useRef();
@@ -45,11 +45,8 @@ function Register() {
           <p>
             As-tu déjà eu une idée brillante, une inspiration soudaine ou
             simplement besoin de noter quelque chose de rapide avant de
-            l'oublier ? Avec Notes, tu peux capturer ces moments précieux en un
-            instant et les garder en sécurité pour toujours. Que ce soit pour
-            organiser tes pensées, créer des listes de tâches, ou simplement
-            griffonner des pensées spontanées, notre application de prise de
-            notes est là pour t'accompagner à chaque étape de ton parcours.
+            l'oublier ? Avec Notes, tu peux sauvegarder ces moments précieux en
+            un instant et les garder en sécurité pour toujours.
           </p>
           <p>
             Rejoins-nous dès aujourd'hui et commence à capturer chaque pensée,
@@ -77,6 +74,9 @@ function Register() {
         </div>
         <button type="submit">S'inscrire</button>
       </form>
+      <p className="paragraph-returnHome">
+        <Link to="/">Revenir à la page d'accueil</Link>
+      </p>
     </div>
   );
 }

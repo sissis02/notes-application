@@ -35,6 +35,7 @@
     text-transform: uppercase;
     cursor: pointer;
     font-family: var(--title-font);
+    text-align: center;
   }
 
   a:hover,
@@ -47,5 +48,52 @@
     color: var(--primary-100);
     scale: 1.04;
     font-weight: 600;
+  }
+}
+
+// responsive
+
+@media screen and (max-width: 1050px) {
+  .navbar {
+    a,
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    .links-container {
+      width: 70%;
+    }
+    a,
+    p {
+      letter-spacing: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    .links-container {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    .links-container {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    .links-container {
+      flex-direction: column;
+    }
   }
 }
