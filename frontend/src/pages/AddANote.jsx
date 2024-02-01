@@ -14,12 +14,15 @@ function AddANote() {
     const newNote = {
       title: event.target.submittedTitle.value,
       description: event.target.submittedDescription.value,
-      userId: user.id,
+      userId: user && user.id,
     };
     try {
       await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/notes`,
-        newNote
+        newNote,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
       // eslint-disable-next-line no-param-reassign
       event.target.submittedTitle.value = "";
