@@ -20,6 +20,7 @@ const noteControllers = require("./controllers/noteControllers");
 /* ************************************************************************* */
 
 router.post("/login", authControllers.login);
+router.post("/users", hashPassword, userControllers.add);
 
 /* ************************************************************************* */
 router.use(verifyToken);
@@ -35,7 +36,6 @@ router.post("/items", itemControllers.add);
 
 /* ************************************************************************* */
 
-router.post("/users", hashPassword, userControllers.add);
 router.get("/users-by-token", userControllers.readByToken);
 router.delete("/users/:id", userControllers.destroy);
 
