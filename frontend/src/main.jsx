@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import AddANote from "./pages/AddANote";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +25,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: <Home />,
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/add-a-note",
-        element: <AddANote />,
+        element: (
+          <ProtectedRoute>
+            <AddANote />
+          </ProtectedRoute>
+        ),
       },
     ],
   },
