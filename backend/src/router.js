@@ -37,7 +37,8 @@ router.post("/login", authControllers.login);
 /* ************************************************************************* */
 
 router.post("/notes", noteControllers.add);
-router.get("notes-by-user", noteControllers.readByUserId);
-router.delete("notes/:id", noteControllers.destroy);
+router.get("/notes-by-user/:id", noteControllers.readByUserId);
+router.put("/notes/:id", noteControllers.edit);
+router.delete("/notes/:id", noteControllers.destroy);
 
 module.exports = router;

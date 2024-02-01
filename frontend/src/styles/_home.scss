@@ -1,0 +1,16 @@
+.home {
+  width: 100vw;
+  min-height: 80vh;
+  padding: 3%;
+  background-color: var(--bg-300);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh;
+
+  .note {
+    width: 25%;
+    height: 50vh;
+  }
+}

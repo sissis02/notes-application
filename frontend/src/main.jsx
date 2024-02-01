@@ -7,6 +7,7 @@ import App from "./App";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import AddANote from "./pages/AddANote";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/add-a-note",
+        element: <AddANote />,
       },
     ],
   },

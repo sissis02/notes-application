@@ -11,10 +11,19 @@ const add = async (req, res, next) => {
 };
 
 const readByUserId = async (req, res, next) => {
-  const { userId } = req.body;
   try {
-    const notes = await tables.note.readByUserId(userId);
+    const notes = await tables.note.readByUserId(req.params.id);
     res.json(notes);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const edit = async (req, res, next) => {
+  const { title, description } = req.body;
+  try {
+    await tables.note.update(req.params.id, title, description);
+    res.sendStatus(200);
   } catch (err) {
     next(err);
   }
@@ -32,5 +41,6 @@ const destroy = async (req, res, next) => {
 module.exports = {
   add,
   readByUserId,
+  edit,
   destroy,
 };
