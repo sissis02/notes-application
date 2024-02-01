@@ -1,11 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate, useRevalidator } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Note({ note }) {
+function Note({ note, loadData }) {
   const navigate = useNavigate();
-  const revalidator = useRevalidator();
   const [carte, setCarte] = useState(note);
   const [modify, setModify] = useState(true);
 
@@ -22,12 +21,15 @@ function Note({ note }) {
       description: e.target.edittedDescription.value,
     };
     try {
-      axios.put(
+      await axios.put(
         `${import.meta.env.VITE_BACKEND_URL}/api/notes/${note.id}`,
-        noteToUpdate
+        noteToUpdate,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
       setCarte(noteToUpdate);
-      revalidator.revalidate();
+      loadData();
       setModify((current) => !current);
     } catch (err) {
       console.info(err);
@@ -38,8 +40,12 @@ function Note({ note }) {
   const handleDeleteNote = async () => {
     try {
       await axios.delete(
-        `${import.meta.env.VITE_BACKEND_URL}/api/notes/${carte.id}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/notes/${note.id}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
+      loadData();
       setModify((current) => !current);
       navigate("/home");
     } catch (err) {
@@ -84,6 +90,7 @@ function Note({ note }) {
 
 Note.propTypes = {
   note: PropTypes.shape.isRequired,
+  loadData: PropTypes.func.isRequired,
 };
 
 export default Note;

@@ -23,6 +23,10 @@ function Login() {
         }
       );
       if (response.status === 200) {
+        const { user } = response.data;
+        const { token } = response.data;
+        setUser(user);
+        localStorage.setItem("token", token);
         setUser(response.data);
         navigate("/home");
       }

@@ -19,7 +19,21 @@ const destroy = async (req, res, next) => {
   }
 };
 
+const readByToken = async (req, res, next) => {
+  try {
+    const user = await tables.user.read(req.auth.userId);
+    if (user == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(user[0]);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   add,
   destroy,
+  readByToken,
 };
