@@ -19,18 +19,12 @@ function Register() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     try {
-      axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users`,
-        {
-          firstname,
-          lastname,
-          email,
-          password,
-        },
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      );
+      axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users`, {
+        firstname,
+        lastname,
+        email,
+        password,
+      });
       revalidator.revalidate();
       navigate("/");
     } catch (e) {
