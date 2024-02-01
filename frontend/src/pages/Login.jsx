@@ -27,6 +27,7 @@ function Login() {
         const { token } = response.data;
         setUser(user);
         localStorage.setItem("token", token);
+        localStorage.setItem("userId", user.id);
         setUser(response.data);
         navigate("/home");
       }
