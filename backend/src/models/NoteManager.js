@@ -21,6 +21,14 @@ class NoteManager extends AbstractManager {
     return rows;
   }
 
+  async update(id, title, description) {
+    const [result] = await this.database.query(
+      `UPDATE ${this.table} SET title=?, description=? WHERE id=?`,
+      [title, description, id]
+    );
+    return result[0];
+  }
+
   async delete(id) {
     const [result] = await this.database.query(
       `DELETE FROM ${this.table} WHERE id=?`,

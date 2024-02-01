@@ -42,7 +42,7 @@ function Login() {
           <p>Bienvenue sur Notes !</p>
           <p>
             Ne laisse pas tes idées s'envoler dans l'oubli ! Connecte-toi
-            maintenant et commence à donner vie à tes pensées
+            maintenant et commence à donner vie à tes pensées.
           </p>
           <p>
             Viens découvrir un univers où chaque note que tu prends devient une
