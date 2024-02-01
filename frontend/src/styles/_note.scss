@@ -108,3 +108,20 @@
     cursor: pointer;
   }
 }
+
+// responsive
+@media screen and (max-width: 1400px) {
+  .note {
+    .modify {
+      width: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .note {
+    .modify {
+      width: 75%;
+    }
+  }
+}

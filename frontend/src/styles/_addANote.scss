@@ -102,3 +102,64 @@
     cursor: pointer;
   }
 }
+
+// responsive
+
+@media screen and (max-width: 1200px) {
+  .addANote {
+    form {
+      width: 35%;
+    }
+    button {
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .addANote {
+    form {
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .addANote {
+    form {
+      width: 45%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .addANote {
+    form {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .addANote {
+    form {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .addANote {
+    form {
+      width: 65%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .addANote {
+    form {
+      width: 80%;
+    }
+  }
+}
