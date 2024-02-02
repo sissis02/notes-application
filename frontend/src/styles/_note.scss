@@ -11,6 +11,38 @@
   justify-content: space-between;
   align-items: center;
 
+  &.grey {
+    background-color: rgba(224, 224, 224, 0.8);
+  }
+
+  &.pink {
+    background-color: rgba(219, 196, 240, 0.8);
+  }
+
+  &.green {
+    background-color: rgba(205, 250, 213, 0.8);
+  }
+
+  &.orange {
+    background-color: rgba(255, 185, 150, 0.8);
+  }
+
+  &.blue {
+    background-color: rgba(210, 224, 251, 0.8);
+  }
+
+  &.yellow {
+    background-color: rgba(255, 255, 204, 0.8);
+  }
+
+  &.red {
+    background-color: rgba(255, 105, 97, 0.8);
+  }
+
+  &.turquoise {
+    background-color: rgba(153, 204, 255, 0.8);
+  }
+
   h3 {
     font-family: var(--title-font);
     color: var(--primary-100);
@@ -27,7 +59,7 @@
     height: 66%;
     text-align: justify;
     overflow-x: auto;
-    background-color: var(--bg-200);
+    border: 2px solid var(--primary-300);
     color: var(--primary-200);
     border-radius: 4px;
   }

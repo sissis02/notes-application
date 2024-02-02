@@ -5,10 +5,10 @@ class NoteManager extends AbstractManager {
     super({ table: "note" });
   }
 
-  async create({ title, description, userId }) {
+  async create({ title, description, category, userId }) {
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (title, description, user_id) VALUES (?, ?, ?)`,
-      [title, description, userId]
+      `INSERT INTO ${this.table} (title, description, category, user_id) VALUES (?, ?, ?, ?)`,
+      [title, description, category, userId]
     );
     return result;
   }

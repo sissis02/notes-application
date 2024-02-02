@@ -20,9 +20,9 @@ const readByUserId = async (req, res, next) => {
 };
 
 const edit = async (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, category } = req.body;
   try {
-    await tables.note.update(req.params.id, title, description);
+    await tables.note.update(req.params.id, title, description, category);
     res.sendStatus(200);
   } catch (err) {
     next(err);
