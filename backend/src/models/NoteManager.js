@@ -23,7 +23,7 @@ class NoteManager extends AbstractManager {
 
   async update(id, title, description, category) {
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET title=?, description=? category=? WHERE id=?`,
+      `UPDATE ${this.table} SET title=?, description=?, category=? WHERE id=?`,
       [title, description, category, id]
     );
     return result[0];
