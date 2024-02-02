@@ -23,7 +23,7 @@ function Note({ note, loadData }) {
       setBackgroundColor("yellow");
     } else if (carte.category === "alimentation") {
       setBackgroundColor("red");
-    } else {
+    } else if (carte.category === "projets") {
       setBackgroundColor("turquoise");
     }
   }, [note]);
@@ -94,7 +94,7 @@ function Note({ note, loadData }) {
       </div>
 
       <select name="cat" id="cat">
-        <option value="">--Modifier option--</option>
+        <option value="">Modifier la catégorie</option>
         <option value="travail">Travail</option>
         <option value="personnel">Personnel</option>
         <option value="finances">Finances</option>

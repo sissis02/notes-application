@@ -44,7 +44,7 @@ function AddANote() {
         <label htmlFor="cat">Thème de la note :</label>
 
         <select name="cat" id="cat">
-          <option value="">--Choisir une option--</option>
+          <option value="">Choisir une catégorie</option>
           <option value="travail">Travail</option>
           <option value="personnel">Personnel</option>
           <option value="finances">Finances</option>
