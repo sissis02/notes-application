@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -7,6 +7,26 @@ function Note({ note, loadData }) {
   const navigate = useNavigate();
   const [carte, setCarte] = useState(note);
   const [modify, setModify] = useState(true);
+  const [backgroundColor, setBackgroundColor] = useState("");
+  useEffect(() => {
+    if (carte.category === "travail") {
+      setBackgroundColor("grey");
+    } else if (carte.category === "personnel") {
+      setBackgroundColor("pink");
+    } else if (carte.category === "finances") {
+      setBackgroundColor("green");
+    } else if (carte.category === "education") {
+      setBackgroundColor("orange");
+    } else if (carte.category === "loisirs") {
+      setBackgroundColor("blue");
+    } else if (carte.category === "voyages") {
+      setBackgroundColor("yellow");
+    } else if (carte.category === "alimentation") {
+      setBackgroundColor("red");
+    } else {
+      setBackgroundColor("turquoise");
+    }
+  }, [note]);
 
   // function to change the current state of Modify
   const handleShowModify = () => {
@@ -19,6 +39,7 @@ function Note({ note, loadData }) {
     const noteToUpdate = {
       title: e.target.edittedTitle.value,
       description: e.target.edittedDescription.value,
+      category: e.target.cat.value,
     };
     try {
       await axios.put(
@@ -54,7 +75,7 @@ function Note({ note, loadData }) {
   };
 
   return modify ? (
-    <div className="note">
+    <div className={`note ${backgroundColor}`}>
       <h3>{carte.title}</h3>
       <p>{carte.description}</p>
       <button type="button" onClick={handleShowModify}>
@@ -71,6 +92,19 @@ function Note({ note, loadData }) {
       >
         <img src="/images/croix.png" alt="cross to quite" />
       </div>
+
+      <select name="cat" id="cat">
+        <option value="">--Modifier option--</option>
+        <option value="travail">Travail</option>
+        <option value="personnel">Personnel</option>
+        <option value="finances">Finances</option>
+        <option value="education">Education</option>
+        <option value="loisirs">Loisirs</option>
+        <option value="voyages">Voyages</option>
+        <option value="alimentation">Alimentation</option>
+        <option value="projets">Projets</option>
+      </select>
+
       <input type="text" name="edittedTitle" defaultValue={carte.title} />
       <textarea
         name="edittedDescription"
